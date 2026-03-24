@@ -3,7 +3,7 @@ This is a threat report based on Rajneesh Gupta's "Detecting and Investigating M
 
 <h1>Scenario Overview</h1>
 The scenario is listed on https://www.malware-traffic-analysis.net/2026/01/31/index.html, but the scenario goes as follows:
-<br>
+<br> <br>
 As an analyst at a Security Operations Center (SOC), you check alerts for the past week and find a signature hit for ET MALWARE Lumma Stealer Victim Fingerprinting Activity that triggered on traffic from 153.92.1[.]49 over TCP port 80. The alert triggered on 2026-01-27 at 23:05 UTC.
 
 Using the information, you retrieve a packet capture (pcap) of the traffic from the internal IP address that triggered the alert. Based on the pcap, you write up an incident report, so the incident responders can track down the computer and associated user.
