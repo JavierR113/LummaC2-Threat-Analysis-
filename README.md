@@ -10,12 +10,12 @@ Using the information, you retrieve a packet capture (pcap) of the traffic from 
 
 The characteristics of my environment:
 
---LAN segment range:  10.1.21[.]0/24   (10.1.21[.]0 through 10.1.21[.]255)
---Domain:  win11office[.]com
---AD environment name:  WIN11OFFICE
---Active Directory (AD) domain controller:  10.1.21[.]2 - WIN-LU4L24X3UB7
---LAN segment gateway:  10.1.21[.]1
---LAN segment broadcast address:  10.1.21[.]25
+<br>--LAN segment range:  10.1.21[.]0/24   (10.1.21[.]0 through 10.1.21[.]255)<br>
+<br>--Domain:  win11office[.]com<br>
+<br<--AD environment name:  WIN11OFFICE<br>
+<br<--Active Directory (AD) domain controller:  10.1.21[.]2 - WIN-LU4L24X3UB7<br>
+<br<--LAN segment gateway:  10.1.21[.]1<br>
+<br<--LAN segment broadcast address:  10.1.21[.]25<br>
 
 <h1>Malware Identification</h1>
 According to Microsoft's Security webpage A Lumma Stealer (also known as LummaC2) is a malware as a service (MaaS) offering, that is capable of stealing data from various browsers and applications such as cryptocurrency wallets and installing other malware.
