@@ -24,5 +24,16 @@ A Lumma Stealer has several delivery technique whihch server to deceive authenti
 They can typically hide as background processes. Communicating back and forth with their C2 server via https tcp communication which can be sniffed. Through stealing information in temporary files, they are actively trying to begin escalating their priviledges within the networking. 
 This spread can be seen through an increase in communication with the AD of a LAN segment in order to try out their new stolen passwords. A place that stores security groups based on authorizations of users, and logon information.
 
+<h1>Methodology</h1>
+
+<br>Common http requests to look for based on keylogger's behavior : http.request.method  == "GET"  and http.reques.method == "POST".<br>
+<br>Shows off the process of information beting sent and receive from the C2 server.<br>
+<br>ip.addr == (infected machine's IP)<br>
+<br>Helps to pinpoint the ip that can allow me to follow the tcp conversation between this infected machine and the C2 server.<br>
+
+
+
+
+
 
 
