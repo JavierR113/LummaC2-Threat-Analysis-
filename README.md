@@ -9,6 +9,7 @@ As an analyst at a Security Operations Center (SOC), you check alerts for the pa
 Using the information, you retrieve a packet capture (pcap) of the traffic from the internal IP address that triggered the alert. Based on the pcap, you write up an incident report, so the incident responders can track down the computer and associated user.
 
 The characteristics of my environment:
+
 <br>--LAN segment range:  10.1.21[.]0/24   (10.1.21[.]0 through 10.1.21[.]255)<br>
 <br>--Domain:  win11office[.]com<br>
 <br>--AD environment name:  WIN11OFFICE<br>
