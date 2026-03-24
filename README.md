@@ -31,6 +31,7 @@ This spread can be seen through an increase in communication with the AD of a LA
 <br>ip.addr == (infected machine's IP)<br>
 <br>Helps to pinpoint the ip that can allow me to follow the tcp conversation between this infected machine and the C2 server.<br>
 
+<h1></h1>
 
 
 
