@@ -55,6 +55,8 @@ Infected host device name communicating with AD:<br>
 Infected host authenticating its credentials (AS-REQ)  with the AD/DC. Client name (Cname) under gwyatt. It then makes a (TGS-REQ) to request a service ticket for a specific resource within the domain. (Its behaviors always tie back to credential harvesting through process injections.)
 <br><br>
 <img src = "https://i.imgur.com/LmWcnAG.png">
+<br>
+Account lookup via the "Find Packet" feature. By specifying packets containing the case sensitive string "Wyatt" I was able to find a Full name listed on a Security Account Manager packet. Identifying the full user's real name.
 
 
 
