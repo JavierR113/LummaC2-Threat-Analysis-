@@ -1,5 +1,5 @@
 # LummaC2-Threat-Analysis-  
-This is a threat report based on Rajneesh Gupta's "Detecting and Investigating Malware Traffic". A project that requires the analysis of a PCAP file containing malicious network behavior through deep packet inspections. The report details this inspection, and my application of Wiresharks tools and networking concepts to identify this risk in a simulated Local Area Network
+This is a threat report based on Rajneesh Gupta's "Detecting and Investigating Malware Traffic". A project that requires the analysis of a PCAP file containing malicious network behavior through deep packet inspections. The report details this inspection, and my application of Wiresharks tools and networking concepts to identify this risk in a simulated Local Area Network.
 
 <h1>Scenario Overview</h1>
 The scenario is listed on https://www.malware-traffic-analysis.net/2026/01/31/index.html, but the scenario goes as follows:
@@ -18,19 +18,47 @@ The characteristics of LAN environment:
 
 <h1>Malware Identification</h1>
 According to Microsoft's Security webpage A Lumma Stealer (also known as LummaC2) is a malware as a service (MaaS) offering, that is capable of stealing data from various browsers and applications such as cryptocurrency wallets and installing other malware.
-A Lumma Stealer has several delivery technique whihch server to deceive authenticated users through Phising attempts and Maladvertising.
+A Lumma Stealer has several delivery techniques to deceive authenticated users through Phising attempts and Maladvertising. Allowing for the rapid exfiltration of user information like credentials, and browser cookies.
 
-They can typically hide as background processes. Communicating back and forth with their C2 server via https tcp communication which can be sniffed. Through stealing information in temporary files, they are actively trying to begin escalating their priviledges within the networking. 
+They can typically hide as background processes. Communicating back and forth with their C2 server via https tcp communication which can be sniffed. Through stealing information in temporary files, they are actively trying to escalate their priviledges within a victim's network. 
 This spread can be seen through an increase in communication with the AD of a LAN segment in order to try out their new stolen passwords. A place that stores security groups based on authorizations of users, and logon information.
 
 <h1>Methodology</h1>
+Based on that description, the isolation of this malware's behavior can be done by looking out for these patterns and applying the relevant filters:
+  
+<br>Common http requests to look for based on keylogger's communication with its C2 servers : http.request.method  == "GET"  and http.reques.method == "POST".
+(Showed off the process of information beting sent and receive from the C2 server.)<br>
+ 
+<br>ip.addr == (infected machine's IP)
+(Helped to pinpoint the ip that can allow me to follow the tcp conversation between this infected machine and the C2 server.)<br> 
 
-<br>Common http requests to look for based on keylogger's behavior : http.request.method  == "GET"  and http.reques.method == "POST".<br>
-<br>Shows off the process of information beting sent and receive from the C2 server.<br>
-<br>ip.addr == (infected machine's IP)<br>
-<br>Helps to pinpoint the ip that can allow me to follow the tcp conversation between this infected machine and the C2 server.<br>
+<h1>Detailed Findings</h1>
+In the scenario it was disclosed that the Activity triggered on traffic from 153.92.1[.]49, over TCP port 80.
+<br>
+<img src = "https://i.imgur.com/61yx5Db.png">
+<br>
+153.92.1.49 traces back to whitepeppr.su (.su being a country code used by post soviet union countries and is an active web domain).<br>
+As shown this domain and communicates with LAN Device 10.1.21.58:
+<br>
+<img src = "https://i.imgur.com/YedBsC9.png">
 
-<h1></h1>
+<br> Located the infected computer's MAC address which confirmes if the physcial computer itself was compromised. It also helped with the pinpointing of the infected machine's movements across the network. As the infostealer actively communicated with the network's Domain Controller to perform user profiling and later on actual authentication so it could access Domain resources. 
+<br>
+<img src = "https://i.imgur.com/0s1Clef.png">
+<br><br>
+Infected host device name communicating with AD:<br>
+<img src = "https://i.imgur.com/U87zeG7.png">
+<br> In this photo the infostealer is clearly seen communicating with CLDAP protocols to ping the domain controller to find information about the environment it is in. Finding specifc information like the DomainGuid.<br>
+<br><br>
+<img src = "https://i.imgur.com/jsFQXM3.png"> 
+<br>
+Infected host authenticating its credentials (AS-REQ)  with the AD/DC. Client name (Cname) under gwyatt.
+
+
+
+
+
+
 
 
 
