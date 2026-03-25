@@ -57,6 +57,12 @@ Infected host authenticating its credentials (AS-REQ)  with the AD/DC. Client na
 <img src = "https://i.imgur.com/LmWcnAG.png">
 <br>
 Account lookup via the "Find Packet" feature. By specifying packets containing the case sensitive string "Wyatt" I was able to find a Full name listed on a Security Account Manager packet. Identifying the full user's real name.
+<br><br>
+<img width="1918" height="976" alt="image" src="https://github.com/user-attachments/assets/3f556581-1408-4047-9943-d9566bf7f837">
+<br>
+Infected machines port initially communicating via tls/https (port 443) to su(eastern european) web domain.
+
+
 
 
 
