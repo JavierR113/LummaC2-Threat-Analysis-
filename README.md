@@ -53,7 +53,8 @@ Infected host device name communicating with AD:<br>
 <img src = "https://i.imgur.com/jsFQXM3.png"> 
 <br>
 Infected host authenticating its credentials (AS-REQ)  with the AD/DC. Client name (Cname) under gwyatt. It then makes a (TGS-REQ) to request a service ticket for a specific resource within the domain. (Its behaviors always tie back to credential harvesting through process injections.)
-
+<br><br>
+<img src = "https://i.imgur.com/LmWcnAG.png">
 
 
 
